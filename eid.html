@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eid Mubarak Greetings</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Amiri', serif;
+            background: #0a2e38;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .moon {
+            position: absolute;
+            top: 5%;
+            right: 5%;
+            width: 60px;
+            height: 60px;
+            background: #f8f3d6;
+            border-radius: 50%;
+            box-shadow: 0 0 50px rgba(248, 243, 214, 0.3);
+            z-index: 1;
+        }
+
+        .stars-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkle 2s infinite;
+        }
+
+        .lantern-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .lantern {
+            position: absolute;
+            width: 30px;
+            height: 60px;
+            background: gold;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 223, 0, 0.8);
+            opacity: 0.8;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .lantern::before, .lantern::after {
+            content: "";
+            position: absolute;
+            width: 8px;
+            height: 15px;
+            background: gold;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .lantern::before { top: -15px; }
+        .lantern::after { bottom: -15px; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .form-container, .greeting {
+            position: relative;
+            z-index: 2;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 2rem;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+
+        input, button {
+            padding: 12px;
+            border-radius: 25px;
+            font-size: 1rem;
+            width: 100%;
+            margin: 5px 0;
+        }
+
+        input {
+            border: 2px solid #f8d56b;
+            background: transparent;
+            color: white;
+            text-align: center;
+        }
+
+        button {
+            background: #f8d56b;
+            color: #0a2e38;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+        .greeting{
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+
+        }
+        .greeting h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            animation: twinkle 2s infinite;
+        }
+        .greeting p {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        .greeting button {
+            margin-top: 1rem;
+            background: #f8d56b;
+            color: #0a2e38;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+        .social-share {
+            margin-top: 1rem;
+            justify-content: center;
+            gap: 10px;
+        }
+        .social-share a {
+            color: #fff;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+        .social-share a i{  
+            font-size: 1.5rem;
+            margin-right: 5px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            padding: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .social-share a i:hover {
+            transform: scale(1.2);
+            color: #f8d56b;
+            box-shadow: 0 0 20px rgba(248, 213, 107, 0.5);
+        }
+        .social-share p {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="moon"></div>
+    <div class="stars-container"></div>
+    <div class="lantern-container"></div>
+
+    <div class="form-container">
+        <form id="nameForm">
+            <input type="text" id="userName" placeholder="Enter your name" required>
+            <button type="submit">Show Greeting</button>
+        </form>
+    </div>
+
+    <div class="greeting" id="greeting" style="display: none;">
+        <h1>Eid Mubarak!</h1>
+        <p id="personalGreeting"></p>
+        <button onclick="showNewGreeting()">New Greeting</button>
+
+        <!-- Social Media Sharing Buttons -->
+        <div class="social-share">
+            <p>Share your greeting:</p>
+            <a href="https://web.whatsapp.com/" id="whatsappShare" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/" id="facebookShare" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://x.com/" id="twitterShare" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.instagram.com/" id="instagramShare" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+    </div>
+
+    <script>
+        function createStars() {
+            for(let i = 0; i < 100; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.width = Math.random() * 3 + 'px';
+                star.style.height = star.style.width;
+                star.style.animationDelay = Math.random() * 2 + 's';
+                document.querySelector('.stars-container').appendChild(star);
+            }
+        }
+
+        function createLanterns() {
+            for(let i = 0; i < 20; i++) {
+                const lantern = document.createElement('div');
+                lantern.className = 'lantern';
+                lantern.style.left = Math.random() * 100 + '%';
+                lantern.style.top = Math.random() * 70 + '%';
+                document.querySelector('.lantern-container').appendChild(lantern);
+            }
+        }
+
+        function showNewGreeting() {
+            const userName = document.getElementById('userName').value;
+            const messages = [
+                `Eid Mubarak, ${userName}! May Allah bless you and your family`,
+                `Wishing you joy and prosperity this Eid, ${userName}!`,
+                `Blessed Eid, ${userName}! May all your prayers be answered`,
+                `Eid greetings, ${userName}! May this special day bring peace and happiness`,
+                `Happy Eid, ${userName}! May your life be filled with joy and success`
+            ];
+            document.getElementById('personalGreeting').textContent = messages[Math.floor(Math.random() * messages.length)];
+            document.getElementById('personalGreeting').textContent = greetingMessage;
+
+            // Update social media share links
+            const encodedMessage = encodeURIComponent(greetingMessage);
+            document.getElementById('whatsappShare').href = `https://api.whatsapp.com/send?text=${encodedMessage}`;
+            document.getElementById('facebookShare').href = `https://www.facebook.com/sharer/sharer.php?u=https://example.com&quote=${encodedMessage}`;
+            document.getElementById('twitterShare').href = `https://twitter.com/intent/tweet?text=${encodedMessage}`;
+            document.getElementById('instagramShare').href = `https://www.instagram.com/?url=https://example.com&caption=${encodedMessage}`;
+        }
+
+        document.getElementById('nameForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.querySelector('.form-container').style.display = 'none';
+            document.getElementById('greeting').style.display = 'block';
+            showNewGreeting();
+        });
+
+        createStars();
+        createLanterns();
+    </script>
+</body>
+</html>
